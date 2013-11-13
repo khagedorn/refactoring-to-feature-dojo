@@ -11,7 +11,7 @@ public class PiggyBankClient {
 	private PiggyBank piggyBank;
 
 	public PiggyBankClient(File f) {
-		piggyBank = new PiggyBank();
+		piggyBank = new PiggyBank(f);
 	}
 
 	public static void main(String[] args){

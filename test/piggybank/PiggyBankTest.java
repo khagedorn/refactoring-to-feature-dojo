@@ -54,4 +54,25 @@ public class PiggyBankTest {
 		tempFolder.delete();
 	}
 
+	@Test
+	public void testStorage() throws IOException {
+		tempFolder.create();
+		
+		File f = tempFolder.newFile();
+		
+		PiggyBankClient client = new PiggyBankClient(f);
+
+		client.doStr("save 10.00");
+		
+		client = new PiggyBankClient(f);
+		
+		client.doStr("withdraw 5.00");
+		
+		client = new PiggyBankClient(f);
+
+		assertEquals("Saved amount: 5.00", client.doStr("balance"));
+		
+		tempFolder.delete();
+	}
+
 }

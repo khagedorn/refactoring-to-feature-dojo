@@ -31,8 +31,9 @@ instructions the process goes somewhat like that:
    need refactoring
 3. Stash/@Ignore/delete your test. Now concentrate on refactoring
    exactly those points, where it is hard to add a feature. Don't
-   forget to refactor and reorganize your existing tests as you go
-   or to add new tests for existing functionality.
+   touch the code that doesn't bother you. Don't forget to refactor
+   and reorganize your existing tests as you go or to add new
+   tests for existing functionality.
 4. When you think you are done unstash/unignore/rewrite the test.
    When you are lucky, the new feature is added in a few minutes and
    everything falls nicely into place, if not, repeat the process.
@@ -54,6 +55,12 @@ The Features
 ------------
 These are the features you want to add:
 
+* Rob the bank: You want to empty your piggybank, so when you enter
+  'rob', the bank should be empty
+* Help: You now have so many commands that you can't remember
+  all of them so when you enter 'help' or an illegal command, you want
+  to see an overview of all possible commands with a short explanation,
+  somewhat like "save <amount>	Stores the given amount to the piggybank ..."
 * History: You want to see the last five transactions on your piggy bank,
   so when you press [h] (for history) you want to see something like
   '01.01.2013, 11:11: Saved 90.00
