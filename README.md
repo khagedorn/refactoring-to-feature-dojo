@@ -47,6 +47,7 @@ method in the PiggyBankClient class. You can try the following commands:
  * save 10.00
  * withdraw 8.30
  * balance
+ * quit
 
 There are some tests in place, but maybe you shouldn't trust them too
 much :)
