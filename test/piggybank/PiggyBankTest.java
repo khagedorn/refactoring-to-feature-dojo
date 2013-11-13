@@ -2,40 +2,56 @@ package piggybank;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 
 public class PiggyBankTest {
 	
-	@Test
-	public void testSave(){
-		PiggyBankClient bcl = new PiggyBankClient();
-		bcl.save(10, 0);
-		
-		assertEquals("Saved amount: 10.00", bcl.money());
-		
-		bcl.save(21, 32);
-		bcl.save(33, 0);
-		
-		assertEquals("Saved amount: 64.32", bcl.money());
-	}
+	@Rule
+	public TemporaryFolder tempFolder = new TemporaryFolder();
 	
 	@Test
-	public void testWithdraw(){
-		PiggyBankClient bcl = new PiggyBankClient();
-		bcl.save(10, 0);
+	public void testSave() throws IOException {
+		tempFolder.create();
 		
-		assertEquals("Saved amount: 10.00", bcl.money());
+		File f = tempFolder.newFile();
 		
-		bcl.withdraw(5, 0);
+		PiggyBankClient client = new PiggyBankClient(f);
+
+		client.doStr("save 10.00");
+		assertEquals("Saved amount: 10.00", client.doStr("balance"));
 		
-		assertEquals("Saved amount: 5.00", bcl.money());
+		client.doStr("save 21.32");
+		client.doStr("save 33.00");
 		
-		try {
-			bcl.withdraw(8, 0);			
-		} catch (NotEnoughMoneyException e){
-			assertEquals("You are too poor to withdraw that much!", e.getMessage());
-		}
+		assertEquals("Saved amount: 64.32", client.doStr("balance"));
+		
+		tempFolder.delete();
+	}
+
+	@Test
+	public void testWithdraw() throws IOException {
+		tempFolder.create();
+		
+		File f = tempFolder.newFile();
+		
+		PiggyBankClient client = new PiggyBankClient(f);
+
+		client.doStr("save 10.00");
+		assertEquals("Saved amount: 10.00", client.doStr("balance"));
+		
+		client.doStr("withdraw 5.00");
+
+		assertEquals("Saved amount: 5.00", client.doStr("balance"));
+		
+		assertEquals("You are too poor to withdraw that much!", client.doStr("withdraw 8.00"));
+		
+		tempFolder.delete();
 	}
 
 }

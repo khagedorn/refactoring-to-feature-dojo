@@ -42,9 +42,10 @@ The Program
 The PiggyBank currently supports saving, withdrawing and getting
 the amount currently in the bank. All of the savings and withdrawals
 are stored in a text file. The Application is started using the main
-method in the PiggyBank class. You can enter a saved amount by pressing
-[s] and entering an amount and you can withdraw something by pressing
-[w] and entering an amount.
+method in the PiggyBankClient class. You can try the following commands:
+ * save 10.00
+ * withdraw 8.30
+ * balance
 
 There are some tests in place, but don't trust on them to cover
 everything :)
@@ -55,8 +56,8 @@ These are the features you want to add:
 
 * History: You want to see the last five transactions on your piggy bank,
   so when you press [h] (for history) you want to see something like
-  '01.01.2013: Saved 90.00
-   01.02.2013: Withdrawed: 30.00'
+  '01.01.2013, 11:11: Saved 90.00
+   01.02.2013, 14:13: Withdrawed: 30.00'
 * Savings per month: you want to see how much money you saved or
   withdrawed in average over the last three months, e.g. you added
   150.00 and withdrawed 90.00 in the last three months and you
@@ -67,4 +68,18 @@ These are the features you want to add:
   something, so if you have 150.00 in the bank, you save 20.00
   per month and you press [g], [200][return], you want to see
   an output like 'It will take you 2.5 months until you have 200.00'
+
+Discussion
+----------
+Here are some questions that you might ask yourself, or ask the group
+as a facilitator in a dojo:
+
+ * How did you like the approach?
+ * Did it work? Was the feature easy to add in the end?
+ * Compared to 'classic' refactoring approaches, such as the "big
+   complete system refactoring that never happens" or the "boyscout
+   rule" approaches, how much effort did you have to invest in 
+   refactoring? How much better or worse is the resulting code?
+ * Which refactorings were your first steps?
+ * Did you refactor the test? How much new tests did you add?
  
