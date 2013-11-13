@@ -47,8 +47,8 @@ method in the PiggyBankClient class. You can try the following commands:
  * withdraw 8.30
  * balance
 
-There are some tests in place, but don't trust on them to cover
-everything :)
+There are some tests in place, but maybe you shouldn't trust them too
+much :)
 
 The Features
 ------------
@@ -82,5 +82,6 @@ as a facilitator in a dojo:
    refactoring? How much better or worse is the resulting code?
  * Which refactorings were your first steps?
  * Did you refactor the test? How much new tests did you add?
+ * Which parts were 'smelly' but weren't refactored? Why?
  * Did you decide to change any behavior?
  
