@@ -82,4 +82,5 @@ as a facilitator in a dojo:
    refactoring? How much better or worse is the resulting code?
  * Which refactorings were your first steps?
  * Did you refactor the test? How much new tests did you add?
+ * Did you decide to change any behavior?
  
