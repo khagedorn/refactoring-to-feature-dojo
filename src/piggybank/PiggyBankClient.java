@@ -50,13 +50,23 @@ public class PiggyBankClient {
 		} else if  (line.startsWith("s") || line.startsWith("save")){
 			String str = line.split(" ")[1];
 			String befDec = str.split("\\.")[0];
-			String afterDec = str.split("\\.")[1];
+			String afterDec;
+			try {
+				afterDec = str.split("\\.")[1];
+			} catch (ArrayIndexOutOfBoundsException e){
+				afterDec = "00";
+			}
 			piggyBank.save(Integer.parseInt(befDec), Integer.parseInt(afterDec));
 			return "ok";
 		} else if  (line.startsWith("w") || line.startsWith("withdraw")){
 			String str = line.split(" ")[1];
 			String befDec = str.split("\\.")[0];
-			String afterDec = str.split("\\.")[1];
+			String afterDec;
+			try {
+				afterDec = str.split("\\.")[1];
+			} catch (ArrayIndexOutOfBoundsException e){
+				afterDec = "00";
+			}
 			boolean withdraw = piggyBank.withdraw(Integer.parseInt(befDec), Integer.parseInt(afterDec));
 			
 			if(!withdraw)

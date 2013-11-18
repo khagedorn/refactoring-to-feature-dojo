@@ -57,7 +57,7 @@ The Features
 These are the features you want to add:
 
 * Rob the bank: You want to empty your piggybank, so when you enter
-  'rob', the bank should be empty
+  'rob', the bank should be empty. Y
 * Help: You now have so many commands that you can't remember
   all of them so when you enter 'help' or an illegal command, you want
   to see an overview of all possible commands with a short explanation,
@@ -66,6 +66,7 @@ These are the features you want to add:
   so when you press [h] (for history) you want to see something like
   '01.01.2013, 11:11: Saved 90.00
    01.02.2013, 14:13: Withdrawed: 30.00'
+   02.02.2013, 14:13: Robbed the bank and got: 173.80'
 * Savings per month: you want to see how much money you saved or
   withdrawed in average over the last three months, e.g. you added
   150.00 and withdrawed 90.00 in the last three months and you
